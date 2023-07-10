@@ -1,0 +1,1195 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+   <meta name="viewport" content="width=device-width, initial-scale=.9" />
+   <title>connecTRIVIA ( beta )</title>
+   <meta charset="utf-8" />
+   <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+   <link rel="stylesheet" href="css/bootzTrap.css">
+   <link rel="stylesheet" href="css/popup.css" />
+   <!-- <link rel="stylesheet" href="css/style.css" /> -->
+   <style>
+       
+.im-framed {
+   margin:0;
+   position: fixed;
+   top:0;
+   left:0;
+         border:none;
+         width:100vw;
+         height:100vh;
+         z-index: -1;
+         height: 100%;
+       }
+       body {
+         text-shadow: 1px 1px 2Px #000000, -1px -1px 1px #ffffff, -1px -1px 3px #000000, -1px -1px 3px #330000;
+         font-size: 2em;
+         text-shadow: -1px -1px 1px #ffffff99, 1px 1px 2px #00000099;
+         text-align: center;
+         overflow: hidden;
+         
+         /* margin-top: -3.3%; */
+         padding: 0;
+         box-sizing: border-box;
+         height: 100%;
+         width: 100vw;
+       }
+ 
+       .start-butt-on {
+         background: none;
+         outline: none;
+         border-radius: 12px;
+         border: none;
+         transition: all 1s ease-out;
+         color: #440000AA;
+         font-family: chalkduster, sans-serif;
+       }
+       .start-butt-on:hover {
+         color:#33ffff55;
+         text-shadow: -1px 1px 1px #ffffff99, -1px -1px 2px #00000099;
+       }
+       .start-butt-on:active {
+         color:#77000055;
+         text-shadow: -1px 1px 1px #ffffff99, -1px -1px 2px #00000099;
+       }
+       h1 {
+         font-size: 2em;
+         
+         color: #fdffa0bf;
+       }
+       /* h3 {
+         opacity: 0.7;
+         font-size: 3rem;
+         text-shadow: 1px 1px 2px #0f0101, -1px -1px 5px #0f0101, 0px 0px 10px #e2d1d1;
+       } */
+       /* a {
+         position: relative;
+       font-size: 3rem;
+       left: 50%;
+       -webkit-transform: translate(-50%);
+       transform: translate(-50%);
+       color: rgb(139, 97, 97);
+     }
+     a:hover {
+       opacity: 0.7;
+       } */
+       table {
+         text-align: center;
+         position: relative;
+         -webkit-box-shadow: inset 5px 20px 30px rgba(0, 0, 0, 0.535),
+         0px 0px 50px rgba(180, 0, 0, 0.535), 1px 1px 3px rgba(255, 255, 255, 0.521),
+         -1px 1px 3px #070101, 0px 0px 20px rgba(0, 0, 0, 0.535),
+         inset 0 1px 15px black;
+         box-shadow: inset 5px 2px 20px 10px rgb(33, 31, 14),
+         0px 0px 5px 2px rgb(0, 0, 0), 1px 1px 3px rgba(255, 255, 255, 0.521),
+         -1px 1px 3px #070101, 0px 0px 20px 2px rgb(6, 58, 107), inset 0 0 7px 2px black;
+         border: 1px solid rgb(211, 232, 18);
+         border-radius: 20px;
+         padding: 15px;
+         max-height: 70vh;
+       min-width: 50vw;
+       margin: auto;
+       }
+       .square {
+         background: #888888;
+         z-index: -5;
+         display: flex;
+         justify-content: center;
+       width: 100%;
+       padding-bottom: 100%;
+       position: relative;
+       /* margin: ; */
+       border-radius: 50%;
+     }
+     
+     .circle {
+       z-index: -4;
+       position: absolute;
+       /* flex-direction: column; */
+       border: 1px solid rgba(255, 255, 255, 0.5);
+       /* margin: 1%; */
+       top: 0;
+       bottom: 0;
+       width: 100%;
+       height: 100%;
+       /* border-width: 4px; */
+       /* border-color: #27ae60; */
+       /* border-style: solid; */
+       border-radius: 50%;
+     }
+     .slot {
+       background: #888888;
+       width: 100%;
+       height: 100%;
+       /* margin: 50%; */
+       /* padding: 5px; */
+       /* -webkit-box-shadow: inset 5px 20px 30px rgba(0, 0, 0, 0.535),
+       inset 5px 20px 30px rgba(0, 0, 0, 0.535);
+       box-shadow: inset 5px 20px 30px rgba(0, 0, 0, 0.535),
+       inset 5px 20px 30px rgba(0, 0, 0, 0.535); */
+     }
+     
+ 
+     
+       .fade-in {
+         animation: fadeIn ease 3.5s;
+         -webkit-animation: fadeIn ease 3.5s;
+         -moz-animation: fadeIn ease 3.5s;
+       -o-animation: fadeIn ease 3.5s;
+       -ms-animation: fadeIn ease 3.5s;
+     }
+       @-webkit-keyframes fadeIn-3 {
+         0% {
+           opacity: 0;
+         }
+         100% {
+           opacity: 1;
+         }
+       }
+       @keyframes fadeIn-3 {
+         0% {
+           opacity: 0;
+         }
+         100% {
+       opacity: 1;
+       }
+       }
+       
+       /* |||||||||||||||||||||||||||||||||||| */
+       
+       td {
+         box-shadow: inset 1px 2px 10px 3px rgb(0, 0, 0);
+         border-radius: 50%;
+         background: #151c88;
+         border: 2px solid rgb(253, 251, 251);
+       padding: 0px;
+     }
+     
+     @media screen and (min-width: 750px) {
+       table {
+         background: #0a2097;
+         text-align: center;
+         position: relative;
+         max-height: 55vh;
+         min-width: 40vw;
+         margin: auto;
+       }
+     }
+     @media screen and (max-width: 600px) {
+       .reset {
+         font-size: 2em;
+       }
+       table {
+       background: #08155e;
+       text-align: center;
+       position: relative;
+       max-height: 45vh;
+       min-width: 80vw;
+       margin: auto;
+     }
+     .player-turn {
+       font-size: 2.5em;
+     }
+   }
+   
+       @media screen and (max-width: 300px) {
+         table {
+       padding: 1px;
+     }
+     td {
+       box-shadow: inset 1px 2px 4px 1px rgb(0, 0, 0);
+       border: 0.5px solid rgb(5, 32, 59);
+     }
+     .player-turn {
+       font-size: 1.5em;
+     }
+   }
+ 
+   /* button {
+     outline: none;
+     padding:10px;
+     margin:10px;
+     background-color: #00000099;
+     text-shadow: -1px -1px 1px #ffffff99, 1px 1px 2px #00000099;
+   } */
+   .start-butt-on {
+     transition: all 1s ease-out;
+     color: #440000AA;
+     font-family: bloodyFont;
+   }
+   .start-butt-on:hover {
+     color:#33ffff55;
+     text-shadow: -1px 1px 1px #ffffff99, -1px -1px 2px #00000099;
+   }
+   .start-butt-on:active {
+     color:#77000055;
+     text-shadow: -1px 1px 1px #ffffff99, -1px -1px 2px #00000099;
+   }
+   .start-butt-on::after {
+     color:#77000000;
+     /* text-shadow: -1px 1px 1px #ffffff99, -1px -1px 2px #00000099; */
+   }
+   .answer-button {
+     transition: all .25s ease-in-out;
+     font-size: 16px;
+     color: #ffffffaa;
+     display: block;
+     margin-bottom: 5px;
+     width: 100%;
+     text-align: left;
+     padding: 10px;
+     background: #ffffff00;
+     border: none;
+         text-shadow: 1px 1px 2Px #000000, -1px -1px 1px #ffffff, -1px -1px 3px #000000, -1px -1px 3px #330000;
+       }
+       .answer-button:hover {
+         font-size: 24px;
+       }
+       .answer-button:active {
+         font-size: 21px;
+       }
+       
+       .answer-button.correct {
+         font-size: 24px;
+         color: #33ff3399;
+       }
+ 
+       .answer-button.incorrect {
+         font-size: 24px;
+         color: #ff444499;
+       }
+ 
+       .score-ticker {
+         transition: all .25s ease-in-out;
+         font-size: .75em;
+         
+         color:33000099;
+ 
+       }
+       .st-1 {
+         position: fixed;
+         top:50%;
+         left:50%;
+         transform: translate(50%, -80%);
+       }
+       
+       .st-2 {
+         position: fixd;
+         top:50%;
+         left:50%;
+         transform: translate(-50%, -80%);
+       }
+       
+       div.modal {
+         position: fixed;
+         bottom:-45%;
+         transform: translateY(20%);
+         padding: 20px;
+         background: #33333300;
+         color: #ffffff88;
+       }
+       * {
+   user-select: none;
+ }
+       .murdered {
+         font-family: murdered;
+       }
+       .bloodied {
+         font-family: bloodied;
+       }
+ body {
+   margin: 0;
+   padding: 0;
+   box-sizing: border-box;
+   height: 100vh;
+   width: 100vw;
+   text-align: center;
+ }
+ 
+ 
+ 
+ 
+ .fade-in {
+   animation: fadeIn ease 3.5s;
+   -webkit-animation: fadeIn ease 3.5s;
+   -moz-animation: fadeIn ease 3.5s;
+   -o-animation: fadeIn ease 3.5s;
+   -ms-animation: fadeIn ease 3.5s;
+ }
+ @-webkit-keyframes fadeIn-3 {
+   0% {
+     opacity: 0;
+   }
+   100% {
+     opacity: 1;
+   }
+ }
+ @keyframes fadeIn-3 {
+   0% {
+     opacity: 0;
+   }
+   100% {
+     opacity: 1;
+   }
+ }
+ 
+ /* |||||||||||||||||||||||||||||||||||| */
+ 
+ td {
+   box-shadow: inset 1px 2px 10px 3px rgb(0, 0, 0);
+   border-radius: 50%;
+   /* background: #151c88; */
+   border: 2px solid rgb(253, 251, 251);
+   padding: 0px;
+ }
+ 
+ @media screen and (min-width: 750px) {
+   table {
+     background: #0a209777;
+     text-align: center;
+     position: relative;
+     max-height: 55vh;
+     min-width: 40vw;
+     margin: auto;
+   }
+ }
+ @media screen and (max-width: 600px) {
+   .reset {
+     font-size: 2em;
+   }
+   table {
+     background: #08155e;
+     text-align: center;
+     position: relative;
+     max-height: 45vh;
+     min-width: 80vw;
+     margin: auto;
+   }
+   .player-turn {
+     color: #ffffffaa;
+     font-size: 2.5em;
+   }
+ }
+ 
+ @media screen and (max-width: 300px) {
+   table {
+     padding: 1px;
+   }
+   td {
+     box-shadow: inset 1px 2px 4px 1px rgb(0, 0, 0);
+     border: 0.5px solid rgb(5, 32, 59);
+   }
+   .player-turn {
+     font-size: 1.5em;
+   }
+ }
+ .bg-frame {
+   opacity: 0.3;
+   position: fixed;
+   z-index: -1;
+   top: -2px;
+   left: -1.5px;
+   width: 100vw;
+   height: 100vh;
+   background-color: blue;
+ }
+ 
+ .im-framed {
+   margin:0;
+   position: fixed;
+   top:0;
+   left:0;
+         border:none;
+         width:100vw;
+         height:100vh;
+         z-index: -1;
+         height: 100%;
+       }
+       body {
+         text-shadow: 1px 1px 2Px #000000, -1px -1px 1px #ffffff, -1px -1px 3px #000000, -1px -1px 3px #330000;
+         font-size: 2em;
+         text-shadow: -1px -1px 1px #ffffff99, 1px 1px 2px #00000099;
+         text-align: center;
+         overflow: hidden;
+         
+         /* margin-top: -3.3%; */
+         padding: 0;
+         box-sizing: border-box;
+         height: 100%;
+         width: 100vw;
+       }
+     
+     
+       .fade-in {
+         animation: fadeIn ease 3.5s;
+         -webkit-animation: fadeIn ease 3.5s;
+         -moz-animation: fadeIn ease 3.5s;
+       -o-animation: fadeIn ease 3.5s;
+       -ms-animation: fadeIn ease 3.5s;
+     }
+       @-webkit-keyframes fadeIn-3 {
+         0% {
+           opacity: 0;
+         }
+         100% {
+           opacity: 1;
+         }
+       }
+       @keyframes fadeIn-3 {
+         0% {
+           opacity: 0;
+         }
+         100% {
+       opacity: 1;
+       }
+       }
+       
+       /* |||||||||||||||||||||||||||||||||||| */
+       
+       td {
+         box-shadow: inset 1px 2px 10px 3px rgb(0, 0, 0);
+         border-radius: 50%;
+         background: #151c88;
+         border: 2px solid rgb(253, 251, 251);
+       padding: 0px;
+     }
+     
+     @media screen and (min-width: 750px) {
+       table {
+         background: #0a2097;
+         text-align: center;
+         position: relative;
+         max-height: 55vh;
+         min-width: 40vw;
+         margin: auto;
+       }
+     }
+     @media screen and (max-width: 600px) {
+     .player-turn {
+       font-size: 2.5em;
+     }
+   }
+   
+       @media screen and (max-width: 300px) {
+         table {
+       padding: 1px;
+     }
+     td {
+       box-shadow: inset 1px 2px 4px 1px rgb(0, 0, 0);
+       border: 0.5px solid rgb(5, 32, 59);
+     }
+     .player-turn {
+       font-size: 1.5em;
+     }
+   }
+ 
+   /* button {
+     outline: none;
+     padding:10px;
+     margin:10px;
+     background-color: #00000099;
+     text-shadow: -1px -1px 1px #ffffff99, 1px 1px 2px #00000099;
+   } */
+   .start-butt-on {
+     transition: all 1s ease-out;
+     color: #ffffff77;
+     font-family: chalkduster, sans-serif;
+     font-size: 15vw;
+   }
+   .start-butt-on:hover {
+     color:#33ffff55;
+     text-shadow: -1px 1px 1px #ffffff99, -1px -1px 2px #00000099;
+   }
+ 
+   .answer-button {
+     transition: all .25s ease-in-out;
+     font-size: 16px;
+     color: #ffffffaa;
+     display: block;
+     margin-bottom: 5px;
+     width: 100%;
+     text-align: left;
+     padding: 10px;
+     background: #ffffff00;
+     border: none;
+         text-shadow: 1px 1px 2Px #000000, -1px -1px 1px #ffffff, -1px -1px 3px #000000, -1px -1px 3px #330000;
+       }
+       .answer-button:hover {
+         font-size: 24px;
+       }
+       .answer-button:active {
+         font-size: 21px;
+       }
+       
+       .answer-button.correct:active {
+         font-size: 24px;
+         color: #33ff3399;
+       }
+ 
+       .answer-button.incorrect:active {
+         font-size: 24px;
+         color: #ff444499;
+       }
+       
+       .score-container {
+         color:#ffffff99;
+         width: 100vw;
+         display:none;
+       }
+       .score-ticker {
+         width: 50vw;
+         left:25%;
+         position: fixed;
+         z-index: 900;
+         font-size: 20vw;
+         transition: all .25s ease-in-out;
+         
+       }
+       .st-1 {
+         
+       }
+       
+       .st-2 {
+         
+       }
+       .title {
+         color:#00667799;
+         text-shadow: 1px 1px 1px #ffffff99, -1px -1px 2px #00000099;
+       }
+       div.modal {
+         position: fixed;
+         bottom:-45%;
+         transform: translateY(20%);
+         padding: 20px;
+         background: #33333300;
+         color: #ffffff88;
+       }
+       
+       
+       .timer-red {
+         color: red !important;
+         animation: blink 1s infinite;
+       }
+ 
+       @keyframes blink {
+         50% {
+           opacity: 0;
+         }
+       }
+ 
+     table {
+       margin: 0 auto;
+     }
+ 
+     td {
+       width: 100px;
+       height: 100px;
+       font-size: 3rem;
+       text-align: center;
+       vertical-align: middle;
+       cursor: pointer;
+     }
+ 
+     .red {
+       background-color: red;
+       color: white;
+     }
+ 
+     .blue {
+       background-color: blue;
+       color: white;
+     }
+     .current-player {
+       bottom:20px;
+       color:#ffffff77;
+       position:fixed;
+        left:50%;
+       transform: translateX(-55%);
+       z-index:930;
+       text-shadow: 1px 1px 2Px #000000, 
+                    -1px -1px 1px #ffffff, 
+                    -1px -1px 3px #000000, 
+                    5px 19px 3px #000000aa;
+     }
+     .absolute-center {
+       position: absolute;
+       top:50%;
+       left:50%;
+       transform: translate(-50%, -50%);
+     }
+    
+    @keyframes pulse-ive {
+   0% {
+       color: #33ff3399;
+       font-size: 15vw;
+   }
+   50% {
+       color: #33ff3322;
+       font-size: 25vw;
+   }
+   100% {
+       color: #33ff3399;
+       font-size: 15vw;
+   }
+ }
+ .pulse-ive {
+   animation-name: pulse-ive;
+   animation-duration:1s;
+   animation-iteration-count: infinite;
+ }
+ div.winner-message {
+   position:absolute;
+   top:40%;
+   color: #33ff3399;
+   width:100vw;
+   height: 100vh;
+   background-color: #00000077;
+   top:0;
+   padding-top: 40%;
+ }
+ @font-face {
+   font-family: Phosphate;
+   src: url(../assets/fonts/Phosphate.ttc);
+ }
+ @font-face {
+   font-family: Chalkduster;
+   src: url(../assets/fonts/Chalkduster.ttf);
+ }
+ @font-face {
+   font-family:murderFont;
+   src: url(../Fonts/zreaks-nfi/TrueType/murder.ttf);
+ }
+ @font-face {
+   font-family:bloodyFont;
+   src: url(../Fonts/youmurderer-bb/bloody.ttf);
+ }
+ .murdered {
+   font-family: murderFont;
+ }
+ .bloodied {
+   font-family: bloodyFont;
+ }
+ .loader {
+   position: fixed;
+   top: 0;
+   left:0;
+   width: 100vw;
+   height: 100vh;
+   background: #00000077;    
+   box-shadow: inset 0 0 50px #00000099;
+   margin: 0;
+   padding: 0;
+   filter:blur(1);
+ }
+ 
+ 
+ 
+ @keyframes load-animation {
+   0% {
+      right:0;
+      top:50%;
+      font-size: 0;       
+      text-shadow: 2px 2px 5px #000000, 
+                   0 0 4px #ffffff, 
+                   -2px -3px 3px #ffffffff, 
+                   1px 2px 1px #00000066,
+                   1px 1px 2px #000000;
+   }
+   
+   20% {
+      top:20%;
+      font-size: 15vw;
+      text-shadow: 2px 2px 5px #00000099, 
+      0 0 4px #ffffff, 
+                   -2px -3px 3px #ffffff55, 
+                   15px 15px 6px #000000;
+                   
+                  }
+                  
+                  40% {
+                     right:100%;
+      font-size: 5vw;
+      text-shadow: 2px 2px 5px #000000, 
+      0 0 4px #ffffff, -2px -3px 3px #ffffffff, 
+      5px 1.7px 3px #00000066, 
+      5px 5px 4px #000000;
+      
+   }
+   
+   60% {
+      top:80%;
+      font-size: 25vw;
+      text-shadow: 2px 2px 5px #00000099, 
+                   0 0 4px #ffffff, 
+                   -2px -3px 3px #ffffff55, 
+                   25px 25px 8px #000000;
+   }
+   80% {
+      font-size: 12vw;
+      text-shadow: 2px 2px 5px #00000099, 
+                   0 0 4px #ffffff, 
+                   -2px -3px 3px #ffffff55, 
+                   12px 12px 5px #000000;
+   }
+   
+   100% {
+      top:50%;
+      right:0;
+      text-shadow: 2px 2px 5px #000000, 
+                   0 0 4px #ffffff, 
+                   -2px -3px 3px #ffffffff, 
+                   1px .25px 1px #00000066, 
+                   1px 1px 2px #000000;
+      font-size: 0;
+   }
+ }
+ 
+ 
+ .load-animation {
+   animation-name: load-animation;
+   animation-duration: 7s;
+   animation-timing-function: ease-in-out;
+   animation-fill-mode: both;
+   animation-iteration-count: infinite;
+   animation-direction: alternate;
+   max-width:12.5vw;
+   min-width:12.5vw;
+   position: fixed;
+   top:50%;
+ }
+ 
+ @keyframes load-box {
+   from {
+      opacity: 1;
+      z-index: 9999999999;
+   }
+   to {
+      z-index: -5;
+      opacity: 0;
+      display: none;
+   }
+ }
+ .hide-loader {
+   position: fixed;
+   animation-name: load-box;
+   animation-iteration-count: 1;
+   animation-timing-function: ease-in-out;
+   animation-delay: 12s;
+   animation-duration: 1.3s;
+   animation-direction: forwards;
+   animation-fill-mode: forwards;
+ }
+ 
+ 
+   </style>
+</head>
+
+<body>
+   <!-- HTML Structure -->
+
+   
+   <header >
+      <h1 class="title">
+         connecTRIVIA
+      </h1>
+   </header>
+   <button
+      type="button"
+      class="start-butt-on start-button absolute-center"
+      id="startButton"
+      data-toggle="modal"
+      data-target="#questionModal">
+      START
+   </button>
+         
+         <div
+         class="modal fade"
+         id="questionModal"
+         tabindex="-1"
+         role="dialog"
+         aria-labelledby="questionModalLabel"
+         aria-hidden="true">
+         <div
+         style="color:green;background:#00000000;"
+         class="modal-dialog"
+         role="document">
+         <div
+        class="modal-content"
+        style="background:#44444488;border-radius:18px;box-shadow:6px 7px 19px #000000aa;border:3px solid #ffffff99;">
+        <div class="modal-body">
+           <p
+           id="timer"></p>
+           <div
+           style="color:#00000077;font-size:25px;"
+           id="questionContainer"></div>
+         </div>
+         <button
+         type="button"
+         class="btn btn-primary"
+         style="display:none;"
+         id="submitBtn">
+         
+      </button>
+   </div>
+</div>
+</div>
+
+   
+   <!-- Correct Modal -->
+   <div id="correctModal" class="modal fade">
+      <div class="modal-dialog">
+         <div style="background:#00000000;border:none;" class="modal-content">
+            
+            
+            
+            
+            <h1 style="text-shadow: 5px 3px 20px #009900, 1px 1px 10px #44aa44;">correct!</h1>
+            <!-- <button id="closeCorrectModal" type="button" class="btn btn-primary">Close</button> -->
+            
+         </div>
+      </div>
+   </div>
+   
+   <!-- Incorrect Modal -->
+   <div style="padding-top:40vh;  animation-iteration-count: 2;animation-duration:1s;animation-direction:alternate;animation-fill-mode:both;" id="incorrectModal" class="modal w3-animate-zoom">
+      <div class="modal-dialog">
+         <div style="background:#00000000;border:none;height:100vh;" class="modal-content ">
+            
+            
+            
+            <h1 style="animation-direction: forwards;animation-duration:1s; animation-iteration-count: 3; font-size:90px; color:#aa000099;" class="w3-spin murdered">WRONG!</h1>
+            
+         </div>
+      </div>
+   </div>
+   
+   <!-- Timed Out Modal -->
+   <div id="timedOutModal" class="modal">
+      <div class="modal-dialog">
+         <div class="modal-content">
+            <div class="modal-header">
+               <h4 class="modal-title">Timed Out</h4>
+            </div>
+            <div class="modal-body">
+               <p>Time's up! You ran out of time.</p>
+            </div>
+         </div>
+      </div>
+   </div>
+   <iframe src="https://page-lib.glitch.me/background2.html" class="im-framed w3-animate-spin" style="opacity:.4; animation: 5s .5 ease-in-out;" frameborder="0"></iframe>
+   <!-- <script src="js/darkmode.js"></script> -->
+   <script src="https://cdnjs.cloudflare.com/ajax/libs/he/1.2.0/he.min.js"></script>
+   <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+   <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+   <!-- <script src="js/popupTwo.js"></script> -->
+   
+   <div class="current-player" id="currentPlayerTurn"></div>
+   
+   <div marginTop="30%" class="score-container absolute-center" id="scoreContainer">
+      <h3 margin="30px">
+      </h3>
+      <p id="scoreTicker1" class=" score-ticker st-1"> 1: 0</p>
+      <br><br><br>
+      
+      <p id="scoreTicker2" class="score-ticker st-2"> 2: 0</p>
+      <h5></h5>
+      
+   </div>
+   <script>
+
+
+const nightModeCSS = `
+body {
+  background-color: #1a1a1a;
+  color: #ffffff;
+}
+a {
+  color: #b3dfff;
+}
+/* Add more styles for different elements as needed */
+`;
+
+
+function applyNightModeStyles() {
+ const styleElement = document.createElement('style');
+ styleElement.setAttribute('id', 'night-mode-styles');
+ styleElement.innerHTML = nightModeCSS;
+ document.head.appendChild(styleElement);
+}
+
+
+function removeNightModeStyles() {
+ const existingStyles = document.getElementById('night-mode-styles');
+ if (existingStyles) {
+    existingStyles.remove();
+ }
+}
+
+function toggleNightMode() {
+ const prefersDarkMode = window.matchMedia('(prefers-color-scheme: dark)').matches;
+
+ if (prefersDarkMode) {
+    applyNightModeStyles();
+    document.body.classList.add('night-mode');
+ } else {
+    removeNightModeStyles();
+    document.body.classList.remove('night-mode');
+ }
+}
+
+
+toggleNightMode();
+window.matchMedia('(prefers-color-scheme: dark)').addEventListener('change', toggleNightMode);
+
+// Call the toggleNightMode function when needed (e.g., clicking a button)
+// For example, assuming you have a button with an ID "night-mode-toggle"
+// document.getElementById('night-mode-toggle').addEventListener('click', toggleNightMode);
+   </script>
+   <script>
+      const startButton = document.querySelector('.start-button');
+      const scoreContainer = document.querySelector('.score-container');
+      
+      const handleClick = () => {
+         startButton.style.display = 'none';
+         scoreContainer.style.display = 'block';
+      };
+      
+      startButton.addEventListener('click', handleClick);
+   </script>
+   <script>
+      const theResetBtn = document.querySelector('.reset-btn')
+fetch(`https://opentdb.com/api.php?amount=10&category=17&type=multiple`)
+   .then(response => response.json()) // Parse the response as JSON
+   .then(data => {
+      const questions = shuffleArray(data.results.map(question => {
+         const options = [...question.incorrect_answers];
+         const correctAnswer = question.correct_answer;
+         const randomIndex = Math.floor(Math.random() * 4);
+         options.splice(randomIndex, 0, correctAnswer);
+         const decodedOptions = options.map(option => he.decode(option));
+         const correctAnswerIndex = options.indexOf(correctAnswer);
+         return {
+            ...question,
+            incorrect_answers: decodedOptions,
+            correct_answer_index: correctAnswerIndex
+         };
+      }));
+      let currentQuestionIndex = 0;
+      let currentPlayer = 1;
+      let scores = {
+         player1: 0,
+         player2: 0
+      };
+      let timer;
+
+      // Function to shuffle the array using Fisher-Yates algorithm
+      function shuffleArray(array) {
+         for (let i = array.length - 1; i > 0; i--) {
+            const j = Math.floor(Math.random() * (i + 1));
+            [array[i], array[j]] = [array[j], array[i]];
+         }
+         return array;
+      }
+
+      // Function to display question in the modal
+      function displayQuestion() {
+
+         const currentPlayerTurn = document.getElementById('currentPlayerTurn');
+         currentPlayerTurn.textContent = 'Player: ' + currentPlayer;
+         // Get the current question from the array
+         const currentQuestion = questions[currentQuestionIndex];
+
+         // Clear the previous question and answer options
+         const questionContainer = document.getElementById('questionContainer');
+         questionContainer.innerHTML = '';
+
+         // Create question element
+         const questionElement = document.createElement('div');
+         questionElement.textContent = he.decode(currentQuestion.question);
+
+         // Create answer options
+         currentQuestion.incorrect_answers.forEach((option, optionIndex) => {
+            const optionElement = document.createElement('button');
+            optionElement.type = 'button';
+            optionElement.textContent = option;
+            optionElement.classList.add('answer-button');
+            optionElement.addEventListener('click', function () {
+               clearInterval(timer); // Stop the timer
+               checkAnswer(optionIndex);
+            });
+
+            // Append option elements to question element
+            questionElement.appendChild(optionElement);
+         });
+
+         // Append question element to the question container
+         questionContainer.appendChild(questionElement);
+
+         // Start the timer
+         startTimer();
+
+         // Show the question modal
+         $('#questionModal').modal('show');
+      }
+
+      // Event listener to display question when modal is shown
+      $('#questionModal').on('show.bs.modal', function () {
+         if (currentQuestionIndex < questions.length) {
+            displayQuestion();
+         } else {
+            console.log("Trivia completed!");
+         }
+      });
+
+      // Function to check the selected answer and handle the result
+      function checkAnswer(selectedOptionIndex) {
+         const currentQuestion = questions[currentQuestionIndex];
+
+         if (selectedOptionIndex === currentQuestion.correct_answer_index) {
+            // Answer is correct
+            const currentPlayerKey = currentPlayer === 1 ? 'player1' : 'player2';
+            scores[currentPlayerKey]++;
+
+            // Update the score ticker
+            const scoreTicker = document.getElementById('scoreTicker' + currentPlayer);
+            scoreTicker.textContent = currentPlayer + ': ' + scores[currentPlayerKey];
+
+            $('.answer-button').eq(selectedOptionIndex).addClass('correct');
+            console.log('Correct!');
+
+            // Close the question modal
+            $('#questionModal').modal('hide');
+
+            // Show the correct answer modal
+            $('#correctModal').modal('show');
+         } else {
+            // Answer is incorrect
+            $('.answer-button').eq(selectedOptionIndex).addClass('incorrect');
+            console.log('Incorrect!');
+
+            // Close the question modal
+            $('#questionModal').modal('hide');
+
+            // Show the incorrect answer modal
+            $('#incorrectModal').modal('show');
+         }
+
+         // Stop the timer
+         clearInterval(timer);
+
+         // Handle the result after a short delay
+         setTimeout(function () {
+            handleResult();
+         }, 1000);
+      }
+
+      // Function to handle the result based on the scenario
+      function handleResult() {
+         const currentQuestion = questions[currentQuestionIndex];
+         const theResetBtn = document.querySelector('.reset-btn')
+
+         if (currentQuestionIndex < questions.length) {
+            if ($('.answer-button').hasClass('correct')) {
+               // Scenario 2: Correct answer selected
+               $('#correctModal').modal('hide');
+               $('.answer-button').removeClass('correct');
+               openNextQuestionModal();
+            } else if ($('.answer-button').hasClass('incorrect')) {
+               // Scenario 1: Incorrect answer selected
+               $('#incorrectModal').modal('hide');
+               $('.answer-button').removeClass('incorrect');
+               openNextQuestionModal();
+            } else {
+               // Scenario 3: Timeout (No button pressed)
+               $('#timeoutModal').modal('show');
+               setTimeout(function () {
+                  $('#timeoutModal').modal('hide');
+                  openNextQuestionModal();
+               }, 2000);
+            }
+         } else {
+
+            console.log("Trivia completed!");
+         }
+      }
+
+      // Function to open the next question modal
+      function openNextQuestionModal() {
+         // Switch to the next player
+         currentPlayer = currentPlayer === 1 ? 2 : 1;
+
+         // Increment the current question index
+         currentQuestionIndex++;
+
+         if (currentQuestionIndex < questions.length) {
+            setTimeout(function () {
+               $('#questionModal').modal('show');
+            }, 1000);
+         } else {
+            console.log("Trivia completed!");
+         }
+      }
+
+      // Function to start the timer
+      function startTimer() {
+         let timeLeft = 10;
+         const timerElement = document.getElementById('timer');
+         timerElement.textContent = timeLeft;
+
+         timerElement.classList.remove('timer-red'); // Remove 'timer-red' class
+
+         timer = setInterval(function () {
+            timeLeft--;
+            timerElement.textContent = timeLeft;
+
+            if (timeLeft <= 4) {
+               timerElement.classList.add('timer-red');
+            }
+
+            if (timeLeft === 0) {
+               clearInterval(timer); // Stop the timer
+               $('#questionModal').modal('hide');
+
+               // Switch to the next player
+               currentPlayer = currentPlayer === 1 ? 2 : 1;
+
+               // Increment the current question index
+               currentQuestionIndex++;
+
+               if (currentQuestionIndex < questions.length) {
+                  // Display the next question after a delay
+                  setTimeout(function () {
+                     $('#questionModal').modal('show');
+                  }, 1000);
+               } else {
+                  theResetBtn.style.marginLeft == '100px';
+                  // All questions have been answered
+                  console.log("Trivia completed!");
+               }
+            }
+         }, 1000);
+      }
+   })
+
+   .catch(error => {
+      console.error("Error:", error);
+   });
+
+      
+   </script>
+   
+   <span class="loader hide-loader">
+      <div class="murdered">
+         <strong style="color:#66001199;animation-delay:1s;" class="load-animation">L</strong>
+         <strong style="color:#11661199;animation-delay:1.2s;" class="load-animation">o</strong> 
+         <strong style="color:#55006699;animation-delay:1.4s;" class="load-animation">a</strong> 
+         <strong style="color:#55115599;animation-delay:1.6s;" class="load-animation">d</strong> 
+         <strong style="color:#22229977;animation-delay:1.8s;" class="load-animation">i</strong> 
+         <strong style="color:teal;animation-delay:2s;" class="load-animation">n</strong> 
+         <strong style="color:purple;animation-delay:2.2s;" class="load-animation">g</strong>
+      </div>
+   </span>
+</body>
+
+</html>
